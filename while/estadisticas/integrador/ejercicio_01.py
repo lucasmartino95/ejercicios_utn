@@ -37,10 +37,10 @@ if cantidad_negativos_ingresados != 0:
 else:
     print("No hay promedio de números negativos")
 
-if suma_positivos == 0:
-    print("No ingresaste ningún número positivo")
-else:
+if cantidad_positivos_ingresados != 0:
     print(f"El número positivo ingresado más grande es: {maximo}")
+else:
+    print("No ingresaste ningún número positivo")
 
 if cantidad_negativos_ingresados != 0:
     print(f"El porcentaje de números negativos ingresados es: {cantidad_negativos_ingresados * 100 / total_numeros_ingresados}%")
