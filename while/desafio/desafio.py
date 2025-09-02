@@ -2,7 +2,7 @@ empleados = 0
 empleados_masculino_ia = 0
 empleados_no_ia = 0
 
-while empleados < 4:
+while empleados < 2:
     nombre = input("Ingresa tu nombre: ")
 
     edad = int(input("Ingresa tu edad: "))
@@ -30,7 +30,7 @@ while empleados < 4:
     if genero != "Femenino" and (edad >= 33 and edad <= 40) and tecnologia_elegida != "IA":
         empleados_no_ia += 1
 
-    # Falta el print número 3
+    # Falta item 3 
     empleados += 1
     porcentaje_no_ia = empleados_no_ia * 100 / empleados
 
