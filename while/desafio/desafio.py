@@ -4,6 +4,7 @@ empleados_no_ia = 0
 
 while empleados < 4:
     nombre = input("Ingresa tu nombre: ")
+
     edad = int(input("Ingresa tu edad: "))
 
     while edad < 18:
@@ -15,7 +16,7 @@ while empleados < 4:
     while genero != "Masculino" and genero != "Femenino" and genero != "Otro":
         print("No seleccionaste la opción correcta")
         genero = input("Ingresa tu genero: (Masculino - Femenino - Otro): ")
-    
+
     tecnologia_elegida = input("Ingresa la tecnología elegida (IA - RV/RA - IOT): ")
 
     while tecnologia_elegida != "IA" and tecnologia_elegida != "RV/RA" and \
@@ -23,25 +24,20 @@ while empleados < 4:
         print("No seleccionaste la tecnología correcta")
         tecnologia_elegida = input("Ingresa la tecnología elegida (IA - RV/RA - IOT): ")
 
-    if genero == "Masculino" and tecnologia_elegida == "IA" and (edad >= 25 and edad <= 50):
+    if genero == "Masculino" and (tecnologia_elegida == "IA" or tecnologia_elegida == "IOT") and (edad >= 25 and edad <= 50):
         empleados_masculino_ia += 1
     
     if genero != "Femenino" and (edad >= 33 and edad <= 40) and tecnologia_elegida != "IA":
         empleados_no_ia += 1
-    
-    if empleados == 0:
-        edad_maxima = edad
-        nombre_edad_maxima = nombre
-        tecnologia_edad_maxima = tecnologia_elegida
 
-    if edad > edad_maxima:
-        edad_maxima = edad
-        nombre_edad_maxima = nombre
-        tecnologia_edad_maxima = tecnologia_elegida
-
+    # Falta el print número 3
     empleados += 1
     porcentaje_no_ia = empleados_no_ia * 100 / empleados
 
-print(f"Cantidad de empleados masculinos que votaron por IA: {empleados_masculino_ia}")
-print(f"El porcentaje de empleados que no votó por IA según los requisitos es: {porcentaje_no_ia}%")
-print(f"El empleado masculino de mayor edad es: {nombre_edad_maxima} y votó: {tecnologia_edad_maxima}")
+print("[1] Genero masculino y edad entre 25 a 50 años (inclusive) que votó por IA o IOT:")
+print(f"La cantidad de empleados es: {empleados_masculino_ia}")
+
+print("[2] No voto por IA, no es femenino y su edad está entre 33 y 40 años:")
+print(f"El porcentaje es: {porcentaje_no_ia}%")
+
+# print(f"[3] El empleado masculino de mayor edad es: {nombre_edad_maxima} y votó: {tecnologia_edad_maxima}")
