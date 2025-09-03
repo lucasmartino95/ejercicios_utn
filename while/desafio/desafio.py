@@ -3,7 +3,7 @@ empleados_masculino_ia = 0
 empleados_no_ia = 0
 empleados_masculinos = 0
 
-while empleados < 5:
+while empleados < 10:
     nombre = input("Ingresa tu nombre: ")
 
     edad = int(input("Ingresa tu edad: "))
