@@ -18,9 +18,6 @@ while empleados < 5:
         print("No seleccionaste la opción correcta")
         genero = input("Ingresa tu genero: (Masculino - Femenino - Otro): ")
 
-    if genero == "Masculino":
-        empleados_masculinos += 1
-
     tecnologia_elegida = input("Ingresa la tecnología elegida (IA - RV/RA - IOT): ")
 
     while tecnologia_elegida != "IA" and tecnologia_elegida != "RV/RA" and \
@@ -33,6 +30,9 @@ while empleados < 5:
     
     if genero != "Femenino" and (edad >= 33 and edad <= 40) and tecnologia_elegida != "IA":
         empleados_no_ia += 1
+
+    if genero == "Masculino":
+        empleados_masculinos += 1
 
     if genero == "Masculino" and empleados_masculinos == 1:
         masculino_edad_maxima = edad
