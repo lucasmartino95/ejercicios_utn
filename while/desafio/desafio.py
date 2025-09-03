@@ -1,8 +1,9 @@
 empleados = 0
 empleados_masculino_ia = 0
 empleados_no_ia = 0
+empleados_masculinos = 0
 
-while empleados < 2:
+while empleados < 5:
     nombre = input("Ingresa tu nombre: ")
 
     edad = int(input("Ingresa tu edad: "))
@@ -17,6 +18,9 @@ while empleados < 2:
         print("No seleccionaste la opción correcta")
         genero = input("Ingresa tu genero: (Masculino - Femenino - Otro): ")
 
+    if genero == "Masculino":
+        empleados_masculinos += 1
+
     tecnologia_elegida = input("Ingresa la tecnología elegida (IA - RV/RA - IOT): ")
 
     while tecnologia_elegida != "IA" and tecnologia_elegida != "RV/RA" and \
@@ -30,7 +34,15 @@ while empleados < 2:
     if genero != "Femenino" and (edad >= 33 and edad <= 40) and tecnologia_elegida != "IA":
         empleados_no_ia += 1
 
-    # Falta item 3 
+    if genero == "Masculino" and empleados_masculinos == 1:
+        masculino_edad_maxima = edad
+        nombre_edad_maxima = nombre
+        tecnologia_edad_maxima = tecnologia_elegida
+    elif genero == "Masculino" and empleados_masculinos > 1 and edad > masculino_edad_maxima:
+        masculino_edad_maxima = edad
+        nombre_edad_maxima = nombre
+        tecnologia_edad_maxima = tecnologia_elegida
+
     empleados += 1
     porcentaje_no_ia = empleados_no_ia * 100 / empleados
 
@@ -40,4 +52,4 @@ print(f"La cantidad de empleados es: {empleados_masculino_ia}")
 print("[2] No voto por IA, no es femenino y su edad está entre 33 y 40 años:")
 print(f"El porcentaje es: {porcentaje_no_ia}%")
 
-# print(f"[3] El empleado masculino de mayor edad es: {nombre_edad_maxima} y votó: {tecnologia_edad_maxima}")
+print(f"[3] El empleado masculino de mayor edad es: {nombre_edad_maxima} y votó: {tecnologia_edad_maxima}")
