@@ -20,8 +20,7 @@ while empleados < 10:
 
     tecnologia_elegida = input("Ingresa la tecnología elegida (IA - RV/RA - IOT): ")
 
-    while tecnologia_elegida != "IA" and tecnologia_elegida != "RV/RA" and \
-    tecnologia_elegida != "IOT":
+    while tecnologia_elegida != "IA" and tecnologia_elegida != "RV/RA" and tecnologia_elegida != "IOT":
         print("No seleccionaste la tecnología correcta")
         tecnologia_elegida = input("Ingresa la tecnología elegida (IA - RV/RA - IOT): ")
 
