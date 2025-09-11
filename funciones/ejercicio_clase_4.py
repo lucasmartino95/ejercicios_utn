@@ -1,18 +1,9 @@
-nombre = input("Ingresa tu nombre: ")
-peso = float(input("Ingresa tu peso: "))
-altura = float(input("Ingresa tu altura: "))
+def obtener_nombre(nombre: str) -> str:
 
-temperatura = float(input("Ingresa tu temperatura: "))
-presion_sistolica = float(input("Ingresa tu presión sistolica: "))
-presion_diastolica = float(input("Ingresa tu presión diastolica: "))
-
-
-def obtener_nombre() -> str:
-    
     return nombre
 
 
-def analizar_temperatura() -> str:
+def analizar_temperatura(temperatura: float) -> str:
 
     if temperatura > 41:
         fiebre = "Muy alta."
@@ -28,7 +19,7 @@ def analizar_temperatura() -> str:
     return fiebre
 
 
-def analizar_imc() -> str:
+def analizar_imc(peso: float, altura: float) -> str:
      
     imc = peso / (altura ** 2)
 
@@ -42,7 +33,7 @@ def analizar_imc() -> str:
     return analisis_imc
 
 
-def analizar_presion() -> str:
+def analizar_presion(presion_sistolica: float, presion_diastolica: float) -> str:
     
     if presion_sistolica < 90 or presion_diastolica < 60:
         analisis_presion = "Baja"
@@ -57,10 +48,10 @@ def analizar_presion() -> str:
 def enviar_mensaje_al_paciente() -> None:
     
     diagnostico = f"""
-    Diágnostico del paciente: {obtener_nombre()}
-    Peso: {analizar_imc()}
-    Temperatura: {analizar_temperatura()}
-    Presión: {analizar_presion()}
+    Diágnostico del paciente: {obtener_nombre("Lucas")}
+    Peso: {analizar_imc(70, 1.70)}
+    Temperatura: {analizar_temperatura(37)}
+    Presión: {analizar_presion(90, 61)}
     """
 
     print(diagnostico)
