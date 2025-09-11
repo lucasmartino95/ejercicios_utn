@@ -1,4 +1,5 @@
 # Preguntar a qué se refiere con especializar funciones
+# Y cuál es el desafio for
 
 def devolver_numero_entero() -> int:
     numero: int = int(input("Ingresa un número entero: "))
