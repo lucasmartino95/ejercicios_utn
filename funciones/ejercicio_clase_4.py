@@ -32,8 +32,8 @@ def analizar_temperatura(temperatura: float) -> str:
 
 imc = calcular_imc(peso, altura)
 
-def analizar_imc(imc_paciente: float) -> str:
-    if imc_paciente < 18.5:
+def analizar_imc(imc: float) -> str:
+    if imc < 18.5:
         analisis_imc = "Es necesario aumentar la ingesta calórica."
     elif imc < 25:
         analisis_imc = "Peso equilibrado."
