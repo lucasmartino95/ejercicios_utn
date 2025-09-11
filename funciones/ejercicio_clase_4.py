@@ -55,7 +55,7 @@ def analizar_presion() -> str:
 
 
 def enviar_mensaje_al_paciente() -> None:
-
+    
     diagnostico = f"""
     Diágnostico del paciente: {obtener_nombre()}
     Peso: {analizar_imc()}
