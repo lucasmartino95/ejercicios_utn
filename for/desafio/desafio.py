@@ -3,7 +3,7 @@ empleados_masculino_ia = 0
 empleados_no_ia = 0
 empleados_masculinos = 0
 
-for empleado in range(1, 11):
+for empleado in range(10):
     nombre = input("Ingresa tu nombre: ")
 
     edad = int(input("Ingresa tu edad: "))

@@ -1,5 +1,3 @@
-# Preguntar a qué se refiere con especializar funciones
-
 def devolver_numero_entero() -> int:
     numero: int = int(input("Ingresa un número entero: "))
     return numero
