@@ -15,7 +15,7 @@ def devolver_numero_flotante() -> float:
 def devolver_cadena() -> str:
 
     cadena: str = input("Escribe algo: ")
-    
+
     return cadena
 
 
