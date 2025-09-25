@@ -1,3 +1,5 @@
+from auxiliares import recortar_lista
+
 def mostrar_union(lista_uno: list, lista_dos: list) -> list:
 
     cantidad = len(lista_uno) + len(lista_dos)
@@ -20,6 +22,8 @@ def mostrar_union(lista_uno: list, lista_dos: list) -> list:
             lista_retorno[z] = lista_dos[i]
             z += 1
 
+    lista_retorno = recortar_lista(lista_retorno)
+    
     return lista_retorno
 
 print(mostrar_union([1, 2, 3, 4, 5, 10], [4, 5, 7, 8, 9, 10, 11]))
