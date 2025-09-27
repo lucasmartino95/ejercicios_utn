@@ -10,7 +10,7 @@ def crear_lista(usuario: int, tamaño: int) -> list:
     return lista
 
 
-def comparar_productos(lista_1: list, lista_2: list) -> list:
+def comparar_productos(lista_1: list, lista_2: list) -> None:
 
     tamaño = 0
 
@@ -34,7 +34,7 @@ def comparar_productos(lista_1: list, lista_2: list) -> list:
         print(f"Ambos usuarios compraron: {lista_retorno}")
 
 
-def comparar_productos_exclusivos(lista_1: list, lista_2: list) -> list:
+def comparar_productos_exclusivos(lista_1: list, lista_2: list) -> None:
 
     print("Productos exclusivos que compró el usuario 1:")
     
@@ -89,3 +89,33 @@ def mostrar_catalogo_total(lista_1: list,
 
     print("El catálogo total es:")
     print(lista_retorno)
+
+
+def dar_recomendaciones(lista_1: list, lista_2: list) -> None:
+
+    print("Recomendación de compras para el usuario 1:")
+
+    for i in range(len(lista_2)):
+        for j in range(len(lista_1)):
+            if lista_2[i] != lista_1[j]:
+                producto_exclusivo = True
+            else:
+                producto_exclusivo = False
+                break
+        
+        if producto_exclusivo:
+            print(lista_2[i])
+
+    print("Recomendación de compras para el usuario 2:")
+
+    for i in range(len(lista_1)):
+        for j in range(len(lista_2)):
+            if lista_1[i] != lista_2[j]:
+                producto_exclusivo = True
+            else:
+                producto_exclusivo = False
+                break
+        
+        if producto_exclusivo:
+            print(lista_1[i])
+
