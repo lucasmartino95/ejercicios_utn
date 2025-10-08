@@ -1,35 +1,22 @@
-mi_matriz = [[1, 2, 3, 4],
-             [5, 6, 7, 8]]
+mi_matriz = [[1, 2, 3],
+             [4, 5, 6],
+             [7, 8, 9]]
 
 
-def validar_matriz(mi_matriz: list) -> bool:
+def mostrar_matriz(matriz: list) -> None:
 
-    numero = 0
-
-    for i in range(len(mi_matriz)):
-        for j in range(len(mi_matriz[i])):
-            
-            if mi_matriz[i][j] >= 1:
-                continue
-            else:
-                print("Los valores deben ser mayor o igual que 1")
-                return False
-        
-    return True
-
-
-matriz_validada = validar_matriz(mi_matriz)
-
-
-def mostrar_matriz(mi_matriz: list) -> None:
-    for i in range(len(mi_matriz)):
-        for j in range(len(mi_matriz[i])):
-            print(mi_matriz[i][j], end=" ")
+    for i in range(len(matriz)):
+        for j in range(len(matriz[i])):
+            print(matriz[i][j], end=" ")
         print()
 
 
-if matriz_validada:
-    print("La matriz creada es: ")
-    mostrar_matriz(mi_matriz)
-else:
-    print("La matriz ingresada no es válida")
+def calcular_constante_magica(matriz: list) -> int:
+
+    n = len(matriz)
+    n = (n * ((n ** 2) + 1)) / 2
+    return n
+
+
+constante_magica = calcular_constante_magica(mi_matriz)
+print(constante_magica)
