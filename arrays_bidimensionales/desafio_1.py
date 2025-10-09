@@ -15,6 +15,5 @@ def mostrar_matriz(matriz: list) -> None:
         print()
 
 
-
 mi_matriz = crear_matriz(mi_orden)
 mostrar_matriz(mi_matriz)
