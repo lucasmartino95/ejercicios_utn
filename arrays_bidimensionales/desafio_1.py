@@ -67,14 +67,54 @@ def calcular_constante_magica(matriz: list) -> int:
     return constante_magica
 
 
-# Falta hacer la suma de cada fila, cada columna y las dos diagonales
-# principales y ver si son iguales a la constante mágica
 def sumar_elementos(matriz: list, constante_magica: int) -> int:
-    pass
+
+    filas = len(matriz)
+    columnas = len(matriz[0])
+    suma_filas = [0] * filas
+    suma_columnas = [0] * columnas
+    diag_principal = 0
+    diag_secundaria = 0
+
+
+    es_igual_a_constante_magica = False
+
+    for i in range(filas):
+        for j in range(columnas):
+            suma_filas[i] += matriz[i][j]
+            suma_columnas[j] += matriz[i][j]
+
+    for i in range(filas):
+        for j in range(columnas):
+            if i == j:
+                diag_principal += matriz[i][j]
+
+            if i + j == columnas - 1:
+                diag_secundaria += matriz[i][j]
+
+    for i in range(len(suma_filas)):
+        if suma_filas[i] == constante_magica:
+            es_igual_a_constante_magica = True
+        else:
+            es_igual_a_constante_magica = False
+
+    for i in range(len(suma_columnas)):
+        if suma_columnas[i] == constante_magica:
+            es_igual_a_constante_magica = True
+        else:
+            es_igual_a_constante_magica = False
+        
+    
+    if es_igual_a_constante_magica == True:
+        print("La matriz es un cuadrado mágico")
+    else:
+        print("La matriz no es un cuadrado mágico")
 
 
 mi_matriz = crear_matriz(mi_orden)
 mi_matriz = cargar_matriz(mi_matriz)
 mostrar_matriz(mi_matriz)
-constante_magica = calcular_constante_magica(mi_matriz)
-sumar_elementos(mi_matriz, constante_magica)
+
+if mi_matriz != type(bool):
+    constante_magica = calcular_constante_magica(mi_matriz)
+    sumar_elementos(mi_matriz, constante_magica)
