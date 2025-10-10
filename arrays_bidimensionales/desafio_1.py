@@ -25,7 +25,8 @@ def cargar_matriz(matriz: list) -> list:
         for j in range(len(matriz[i])):
             print(f"Columna {j}")
             matriz[i][j] = int(input("Ingresa un número: "))
-            while matriz[i][j] < 1:
+            # Falta comprobar que los números no se repitan
+            while matriz[i][j] < 1: 
                 print("Debes ingresar números mayores que 1")
                 matriz[i][j] = int(input("Ingresa un número: "))
 
