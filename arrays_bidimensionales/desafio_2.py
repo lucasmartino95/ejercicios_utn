@@ -75,6 +75,7 @@ def emparejar_opcion(opcion_elegida: int) -> None:
     n_legajo = int(input("Ingresa tu número de legajo: "))
     legajo_valido = verificar_numero_legajo(n_legajo, lista_legajos)
 
+    # Falta agregar validaciones de línea y coche
     if legajo_valido:
         match opcion_elegida:
             case 1:
