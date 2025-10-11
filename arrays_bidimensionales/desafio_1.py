@@ -57,7 +57,7 @@ def cargar_matriz(matriz: list) -> list:
 def calcular_constante_magica(matriz: list) -> int:
 
     constante_magica = 0
-
+    
     for i in range(len(matriz)):
         for j in range(len(matriz[i])):
             constante_magica += matriz[i][j]
@@ -115,6 +115,6 @@ mi_matriz = crear_matriz(mi_orden)
 mi_matriz = cargar_matriz(mi_matriz)
 mostrar_matriz(mi_matriz)
 
-if mi_matriz != type(bool):
+if mi_matriz != False:
     constante_magica = calcular_constante_magica(mi_matriz)
     sumar_elementos(mi_matriz, constante_magica)
