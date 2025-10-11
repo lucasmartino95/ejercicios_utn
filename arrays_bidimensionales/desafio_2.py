@@ -5,12 +5,12 @@ lineas = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
 def desplegar_menu_de_opciones() -> int:
 
     print("Menú de opciones")
-    print("[1] Cargar planilla de recaudación: ")
-    print("[2] Mostrar la recaudación de cada coche y línea: ")
-    print("[3] Calcular y mostrar la recaudación por cada línea: ")
+    print("[1] Cargar planilla de recaudación ")
+    print("[2] Mostrar la recaudación de cada coche y línea ")
+    print("[3] Calcular y mostrar la recaudación por cada línea ")
     print("[4] Calcular y mostrar la recaudación por coche ")
-    print("[5] Calcular y mostrar la recaudación total: ")
-    print("[6] Salir del programa: ")
+    print("[5] Calcular y mostrar la recaudación total ")
+    print("[6] Salir del programa ")
     eleccion_usuario = int(input("Elige lo que quieres hacer: "))
 
     return eleccion_usuario
@@ -79,9 +79,15 @@ def emparejar_opcion(opcion_elegida: int) -> None:
     if legajo_valido:
         match opcion_elegida:
             case 1:
-                indice_linea = int(input("Ingresa la línea: "))
-                indice_coche = int(input("Ingresa el coche: "))
-                recaudacion = int(input("Ingresa la recaudación: $"))
+                indice_linea = int(input("Ingresa la línea (entre 0 y 2): "))
+                while indice_linea < 0 or indice_linea > 2:
+                    indice_linea = int(input("Ingresa la línea (entre 0 y 2): "))
+                indice_coche = int(input("Ingresa el coche (entre 0 y 4): "))
+                while indice_coche < 0 or indice_coche > 4:
+                    indice_coche = int(input("Ingresa el coche (entre 0 y 4): "))
+                recaudacion = int(input("Ingresa la recaudación (solo valores positivos): $"))
+                while recaudacion < 0:
+                    recaudacion = int(input("Ingresa la recaudación (solo valores positivos): $"))
                 cargar_planilla_de_recaudacion(indice_linea,
                                                indice_coche,
                                                recaudacion,
@@ -90,10 +96,16 @@ def emparejar_opcion(opcion_elegida: int) -> None:
                 mostrar_recaudacion(lineas)
             case 3:
                 n_linea = int(input("Ingresa el número de línea (entre 0 y 2): "))
+                while n_linea < 0 or n_linea > 2:
+                    n_linea = int(input("Ingresa el número de línea (entre 0 y 2): "))
                 mostrar_recaudacion_linea(lineas, n_linea)
             case 4:
                 n_linea = int(input("Ingresa el número de línea (entre 0 y 2): "))
+                while n_linea < 0 or n_linea > 2:
+                    n_linea = int(input("Ingresa el número de línea (entre 0 y 2): "))
                 n_coche = int(input("Ingresa el número de coche (entre 0 y 4): "))
+                while n_coche < 0 or n_coche > 4:
+                    n_coche = int(input("Ingresa el número de coche (entre 0 y 4): "))
                 mostrar_recaudacion_coche(lineas, n_linea, n_coche)
             case 5:
                 mostrar_recaudacion_total(lineas)
