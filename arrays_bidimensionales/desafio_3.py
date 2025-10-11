@@ -52,6 +52,11 @@ def verificar_secuencia_numeros_pares(mi_matriz: list) -> None:
     else:
         print("NO EXISTEN NÚMEROS CONSECUTIVOS PARES")
 
+    print(f"Cantidad de secuencias de números pares: {contador}")
+
+
+def determinar_secuencia_mas_corta(mi_matriz: list) -> None:
+    pass
 
 matriz = crear_matriz(filas, columnas)
 cargar_matriz(matriz)
