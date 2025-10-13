@@ -56,7 +56,34 @@ def verificar_secuencia_numeros_pares(mi_matriz: list) -> None:
 
 
 def identificar_secuencia(matriz: list) -> list:
-    pass
+
+    secuencia_minima = []
+
+    secuencia_maxima = []
+
+    for i in range(len(matriz)):
+        secuencia_actual = []
+        for j in range(len(matriz[i])):
+            if matriz[i][j] % 2 == 0:
+                secuencia_actual += [matriz[i][j]]
+                if i == 0:
+                    secuencia_minima = secuencia_actual
+                    secuencia_maxima = secuencia_actual
+            else:
+                secuencia_actual = []
+        
+        if len(secuencia_actual) < len(secuencia_minima):
+            secuencia_minima = secuencia_actual
+        elif len(secuencia_actual) > len(secuencia_maxima):
+            secuencia_maxima = secuencia_actual
+        
+        if len(secuencia_minima) == 0 or len(secuencia_minima) == 1:
+            secuencia_minima = secuencia_maxima
+
+
+    print(f"Secuencia mínima: {secuencia_minima}")
+
+    print(f"Secuencia máxima: {secuencia_maxima}")
         
 
 matriz = crear_matriz(filas, columnas)
