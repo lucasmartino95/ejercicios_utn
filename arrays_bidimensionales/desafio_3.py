@@ -55,6 +55,7 @@ def verificar_secuencia_numeros_pares(mi_matriz: list) -> None:
     print(f"Cantidad de secuencias de números pares: {contador}")
 
 
+# Falta esta función
 def identificar_secuencia(matriz: list) -> list:
 
     secuencia_minima = []
