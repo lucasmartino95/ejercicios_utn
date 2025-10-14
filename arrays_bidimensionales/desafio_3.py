@@ -55,8 +55,9 @@ def verificar_secuencia_numeros_pares(mi_matriz: list) -> None:
     print(f"Cantidad de secuencias de números pares: {contador}")
 
 
-def identificar_secuencia(matriz: list) -> list:
+def identificar_secuencia(matriz: list) -> None:
     pass
+
 
 matriz = crear_matriz(filas, columnas)
 cargar_matriz(matriz)
